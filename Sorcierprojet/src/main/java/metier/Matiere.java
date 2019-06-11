@@ -12,19 +12,18 @@ public class Matiere
 	
 	private String nom;
 	
-	/*@OneToOne(mappedBy = "prof")
+	@OneToOne(mappedBy = "matiere")
 	private Professeur professeur;
-	*/
 	
-	@OneToMany
-	//(mappedBy = "sorts")
+	
+	@OneToMany(mappedBy = "matiere")
 	private List<Sort> sortileges = new ArrayList();
 	
 	public Matiere(){}
 	
 	public Matiere(String nom, Professeur professeur, List<Sort> sortileges) {
 		this.nom = nom;
-		//this.professeur = professeur;
+		this.professeur = professeur;
 		this.sortileges = sortileges;
 	}
 	
@@ -41,14 +40,14 @@ public class Matiere
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	/*
+	
 	public Professeur getProfesseur() {
 		return professeur;
 	}
 	public void setProfesseur(Professeur professeur) {
 		this.professeur = professeur;
 	}
-	*/
+	
 	public List<Sort> getSortileges() {
 		return sortileges;
 	}

@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue("professeur")
-public class Professeur extends Sorcier{
-@OneToOne
+public class Professeur extends Sorcier {
+	@OneToOne
 	private Matiere matiere;
 
 	public Professeur() {
@@ -23,10 +23,7 @@ public class Professeur extends Sorcier{
 
 	@Override
 	public String toString() {
-		return super.toString() +" [matiere=" + matiere + "]";
+		return super.toString() + " [matiere=" + matiere + "]";
 	}
 
-	
-	
-	
 }

@@ -13,8 +13,8 @@ public class Maison {
 	@Column(unique = true)
 	private String nom;
 	private Integer score;
-	/*@Column(name="prof_principal")
-	private Professeur professeur;*/
+	@Column(name="prof_principal")
+	private Professeur professeur;
 	@OneToMany(mappedBy="maison")
 	private List<Eleve> eleves = new ArrayList<Eleve>();
 	@Version
@@ -37,13 +37,13 @@ public class Maison {
 		this.score = score;
 	}
 
-	/*public Professeur getProfesseur() {
+	public Professeur getProfesseur() {
 		return professeur;
 	}
 
 	public void setProfesseur(Professeur professeur) {
 		this.professeur = professeur;
-	}*/
+	}
 
 	public List<Eleve> getEleves() {
 		return eleves;

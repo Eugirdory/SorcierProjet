@@ -3,7 +3,6 @@ package metier;
 import java.util.*;
 
 import javax.persistence.*;
-//rorororro
 
 @Entity
 @DiscriminatorValue("eleve")

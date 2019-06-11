@@ -3,7 +3,7 @@ package metier;
 import java.util.*;
 
 import javax.persistence.*;
-
+//rorororro
 
 @Entity
 @DiscriminatorValue("eleve")
@@ -12,8 +12,8 @@ public class Eleve extends Sorcier {
 	@Id
 	private Integer id;
 	@ManyToMany
-	/*@JoinTable(name="etudes")
-	private List<Matiere> matieres = new ArrayList<Matiere>();*/
+	@JoinTable(name="etudes")
+	private List<Matiere> matieres = new ArrayList<Matiere>();
 	@ManyToOne
 	@JoinColumn(name = "maison")
 	private Maison maison;
@@ -22,14 +22,14 @@ public class Eleve extends Sorcier {
 
 	
 	//getters et setters
-	/*public List<Matiere> getMatieres() {
+	public List<Matiere> getMatieres() {
 		return matieres;
 	}
 
 	public void setMatieres(Matiere matiere) {
 		this.matieres.add(matiere);
 	}
-*/
+
 	public Maison getMaison() {
 		return maison;
 	}

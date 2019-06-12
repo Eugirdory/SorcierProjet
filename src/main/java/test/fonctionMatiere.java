@@ -1,6 +1,6 @@
 package test;
 
-import java.util.List;
+import java.util.*;
 
 import dao.*;
 import metier.*;
@@ -13,9 +13,9 @@ public class fonctionMatiere {
 		return rep;
 	}
 
-	public Matiere creerMatiere(String nom, String professeur, String sortileges) {
+	public Matiere creerMatiere(String nom, Professeur professeur) {
 
-		Matiere matiere = new Matiere(nom, professeur, sortileges);
+		Matiere matiere = new Matiere(nom,  professeur);
 
 		return matiere;
 	}
@@ -37,7 +37,9 @@ public class fonctionMatiere {
 
 	public String ajoutSort(Sort sort) {
 		String rep = "";
-		
+		DAOSort daoSort = new DAOSort();
+		daoSort.insert(sort);
+		rep += "Vous avez ajouté " + sort;
 
 		return rep;
 	}

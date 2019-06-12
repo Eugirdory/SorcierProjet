@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @NamedQueries({
-	//@NamedQuery(name = "Sort.findWithMatiere", query = "select s from Sort s left join fetch s.matiere")
+	@NamedQuery(name = "Sort.findWithMatiere", query = "select s from Sort s left join fetch s.matiere")
 	})
 public class Sort 
 {

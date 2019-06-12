@@ -21,7 +21,7 @@ public class DAOSort implements DAO<Sort, Integer>
 		em.persist(object);
 		em.getTransaction().commit();
 		em.close();
-		Context.destroy();
+		
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class DAOSort implements DAO<Sort, Integer>
 		Sort s = em.find(Sort.class, id);
 		
 		em.close();
-		Context.destroy();
+
 		return s;
 	}
 
@@ -49,7 +49,7 @@ public class DAOSort implements DAO<Sort, Integer>
 		em.getTransaction().commit();
 		
 		em.close();
-		Context.destroy();
+	
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class DAOSort implements DAO<Sort, Integer>
 		em.getTransaction().commit();
 		
 		em.close();
-		Context.destroy();
+	
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class DAOSort implements DAO<Sort, Integer>
 		List<Sort> liste = query.getResultList();
 		
 		em.close();
-		Context.destroy();
+	
 		return liste;
 	}
 

@@ -21,7 +21,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		em.getTransaction().commit();
 
 		em.close();
-		Context.destroy();
+		
 
 	}
 
@@ -34,7 +34,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 
 		em.close();
 
-		Context.destroy();
+	
 
 		return s;
 	}
@@ -50,7 +50,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		em.getTransaction().commit();
 
 		em.close();
-		Context.destroy();
+		
 
 	}
 
@@ -65,7 +65,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		em.getTransaction().commit();
 
 		em.close();
-		Context.destroy();
+		
 
 	}
 
@@ -78,7 +78,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+
 		return liste;
 	}
 
@@ -90,7 +90,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+		
 		return liste;
 	}
 
@@ -102,7 +102,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+		
 		return liste;
 	}
 
@@ -114,7 +114,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+	
 		return liste;
 	}
 
@@ -126,7 +126,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+	
 		return liste;
 	}
 
@@ -138,7 +138,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+
 		return liste;
 	}
 
@@ -150,7 +150,7 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-		Context.destroy();
+		
 		return liste;
 	}
 

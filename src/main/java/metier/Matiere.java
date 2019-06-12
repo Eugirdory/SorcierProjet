@@ -26,8 +26,14 @@ public class Matiere {
 
 	public Matiere(String nom, Professeur professeur, List<Sort> sortileges) {
 		this.nom = nom;
-		// this.professeur = professeur;
+		this.professeur = professeur;
 		this.sortileges = sortileges;
+	}
+	
+	public Matiere(String nom, Professeur professeur) {
+		this.nom = nom;
+		this.professeur = professeur;
+	
 	}
 
 	public Integer getMatiereId() {

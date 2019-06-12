@@ -8,10 +8,10 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		//InitMaison();
-		//InitMatieres();
-		//testSorciers();
-		//testProfPrincipal();
+		/*InitMaison();
+		InitMatieres();
+		testSorciers();
+		testProfPrincipal();*/
 		testSort();
 
 	}
@@ -25,33 +25,38 @@ public class Test {
 		s1.setMatiere(daoMat.selectById(5));
 		s1.setTypesort(TypeSort.defense);
 		
-		Matiere dcfm=daoMat.selectById(5);
-		dcfm.setSortileges(s1);
+		//Matiere dcfm=daoMat.selectById(5);
+		//dcfm.setSortileges(s1);
 		
-		/*Sort s2=new Sort("Accio", daoMat.selectById(2),TypeSort.enchantement);
+		Sort s2=new Sort("Accio", daoMat.selectById(2),TypeSort.enchantement);
 		
-		Matiere ench=daoMat.selectById(2);
-		ench.setSortileges(s2);
+		/*Matiere ench=daoMat.selectById(2);
+		ench.setSortileges(s2);*/
 		
 		Sort s3=new Sort("VeraVerto", daoMat.selectById(1),TypeSort.metamorphose);
 		
-		Matiere transf=daoMat.selectById(1);
-		transf.setSortileges(s3);
+		/*Matiere transf=daoMat.selectById(1);
+		transf.setSortileges(s3);*/
 		
 		Sort s4=new Sort("Wingardium Leviosa", daoMat.selectById(2),TypeSort.deplacement);
-		ench.setSortileges(s4);*/
+		//ench.setSortileges(s4);*/
 		
-		System.out.println(s1);
+		//System.out.println(s1);
+		//System.out.println(daoMat.selectById(5));
+
+		
 		
 		daoS.insert(s1);
-//		daoS.insert(s2);
-//		daoS.insert(s3);
-//		daoS.insert(s4);
+		daoS.insert(s2);
+		daoS.insert(s3);
+		daoS.insert(s4);
 		
 		/*daoMat.update(transf);
 		daoMat.update(ench);
 		daoMat.update(dcfm);*/
-
+		/*for (Matiere m: daoMat.selectAllWithSort()){
+			System.out.println(m);
+		}*/
 
 	}
 

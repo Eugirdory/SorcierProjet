@@ -16,6 +16,7 @@ public class Sort
 	@ManyToOne
 	@JoinColumn(name="matiere")
 	private Matiere matiere;
+	@Enumerated(EnumType.STRING)
 	private TypeSort typesort;
 	
 	public Sort(){}

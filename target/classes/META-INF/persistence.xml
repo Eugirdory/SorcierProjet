@@ -5,7 +5,7 @@
 	<persistence-unit name="maBase" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/sorciers" />
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/poudlard" />
 			<property name="hibernate.connection.driver" value="com.postgresql.Driver" />
 			<property name="hibernate.connection.user" value="postgres" />
 			<property name="hibernate.connection.password" value="root" />

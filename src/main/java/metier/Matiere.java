@@ -12,11 +12,11 @@ public class Matiere
 	
 	private String nom;
 	
-	@OneToOne(mappedBy = "prof")
+	@OneToOne(mappedBy = "matiere")
 	private Professeur professeur;
 	
 	
-	@OneToMany(mappedBy = "sorts")
+	@OneToMany(mappedBy = "matiere")
 	private List<Sort> sortileges = new ArrayList();
 	
 	public Matiere(){}

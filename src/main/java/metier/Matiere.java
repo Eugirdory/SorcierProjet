@@ -14,6 +14,7 @@ public class Matiere {
 
 	private String nom;
 
+
 	@OneToOne(mappedBy = "matiere")
 	private Professeur professeur;
 

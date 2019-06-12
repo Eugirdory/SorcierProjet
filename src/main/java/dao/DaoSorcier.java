@@ -23,6 +23,10 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		em.close();
 
 
+
+		
+
+
 	}
 
 	@Override
@@ -34,6 +38,10 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 
 		em.close();
 
+
+
+
+	
 
 
 		return s;
@@ -50,7 +58,6 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		em.getTransaction().commit();
 
 		em.close();
-
 
 	}
 
@@ -90,7 +97,6 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-
 		return liste;
 	}
 
@@ -102,7 +108,6 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-
 		return liste;
 	}
 
@@ -114,7 +119,6 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-
 		return liste;
 	}
 
@@ -150,7 +154,6 @@ public class DaoSorcier implements DAO<Sorcier, Integer> {
 		List<Sorcier> liste = query.getResultList();
 
 		em.close();
-
 		return liste;
 	}
 

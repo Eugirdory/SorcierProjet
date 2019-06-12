@@ -22,11 +22,15 @@ public class DAOSort implements DAO<Sort, Integer>
 		em.getTransaction().commit();
 		em.close();
 
+
+
+		
+
 	}
 
 	@Override
 	public Sort selectById(Integer id) {
-		// TODO Auto-generated method stub
+
 		EntityManagerFactory emf = Context.getInstance().getEmf();
 		EntityManager em = emf.createEntityManager();
 		
@@ -50,6 +54,10 @@ public class DAOSort implements DAO<Sort, Integer>
 		
 		em.close();
 
+
+
+	
+
 	}
 
 	@Override
@@ -64,6 +72,10 @@ public class DAOSort implements DAO<Sort, Integer>
 		
 		em.close();
 
+
+
+	
+
 	}
 
 	@Override
@@ -77,6 +89,10 @@ public class DAOSort implements DAO<Sort, Integer>
 		List<Sort> liste = query.getResultList();
 		
 		em.close();
+
+
+
+	
 
 		return liste;
 	}

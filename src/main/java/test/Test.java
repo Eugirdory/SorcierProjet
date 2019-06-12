@@ -11,9 +11,94 @@ public class Test {
 		/*InitMaison();
 		InitMatieres();
 		testSorciers();
-		testProfPrincipal();*/
-		testSort();
+		testProfPrincipal();
+		testSort();*/
+		
+		//System.out.println(ajoutMaison("Wampus"));
+		//System.out.println(consultMaison("Gryffondor"));
+		//System.out.println(ajoutPoints("Gryffondor", 5));
+		
+		//testajoutEleveMaison();
+		testModifProfPrincipal();
+		
+		
+		
 
+	}
+	
+	public static void testModifProfPrincipal(){
+		DaoSorcier daoS=new DaoSorcier();
+		Sorcier sorc=daoS.selectById(5);
+		Professeur prof=(Professeur)sorc;
+		
+		System.out.println(modifProfPrincipal(prof, "Gryffondor"));
+	}
+	public static String modifProfPrincipal(Professeur prof, String nom){
+		DaoSorcier daoS=new DaoSorcier();
+		DaoMaison daoM=new DaoMaison();
+		Maison maison=daoM.selectById(nom);
+		String nomProfesseur=prof.getNom();
+		
+		maison.setNomProfesseur(nomProfesseur);;
+		daoM.update(maison);
+		
+		return "Le Professeur " + nomProfesseur + " est maintenant responsable de la maison "+ maison.getNom();
+	}
+	public static void testajoutEleveMaison(){
+		Eleve eleve=new Eleve();
+		eleve.setNom("Weasley");
+		eleve.setPrenom("Ron");
+		eleve.setCivilite(Civilite.Monsieur);
+		eleve.setPatronus(Patronus.poisson);
+		
+		System.out.println(ajoutEleveMaison(eleve, "Gryffondor"));
+	}
+	public static String ajoutEleveMaison(Eleve eleve, String nom){
+		DaoSorcier daoS=new DaoSorcier();
+		DaoMaison daoM=new DaoMaison();
+		Maison maison=daoM.selectById(nom);
+		
+		eleve.setMaison(maison);
+		daoS.update(eleve);
+		
+		
+		return "Le Choixpeau Magique à placé "+ eleve.getPrenom()+ " à " + maison.getNom();
+	}
+	
+	public static String ajoutPoints(String nom, int points){
+		DaoMaison daoM=new DaoMaison();
+		Maison maison=daoM.selectById(nom);
+		int score=maison.getScore();
+		score +=points;
+		maison.setScore(score);
+		daoM.update(maison);
+		
+		return points + " points pour "+ nom + " !";
+	}
+	public static String consultMaison(String nom){
+		DaoMaison daoM=new DaoMaison();
+		Maison maison=daoM.selectById(nom);
+		String reponse=maison.toString();
+		
+		return reponse;
+	}
+	public static String ajoutMaison(String nom){
+		DaoMaison daoM=new DaoMaison();
+
+		int count=0;
+		String reponse= " ";
+		for (Maison s: daoM.selectAll()){
+			count++;
+		}
+		if (count==4)
+			reponse="Il y a déjà quatre maisons à Poudlard !";
+		else {
+			Maison maison=new Maison();
+			maison.setNom(nom);
+			daoM.insert(maison);
+			reponse="La maison "+ nom + " a été ajoutée à Poudlard";
+		}
+		return reponse;
 	}
 	
 	public static void testSort() {
@@ -25,25 +110,13 @@ public class Test {
 		s1.setMatiere(daoMat.selectById(5));
 		s1.setTypesort(TypeSort.defense);
 		
-		//Matiere dcfm=daoMat.selectById(5);
-		//dcfm.setSortileges(s1);
 		
 		Sort s2=new Sort("Accio", daoMat.selectById(2),TypeSort.enchantement);
 		
-		/*Matiere ench=daoMat.selectById(2);
-		ench.setSortileges(s2);*/
 		
 		Sort s3=new Sort("VeraVerto", daoMat.selectById(1),TypeSort.metamorphose);
 		
-		/*Matiere transf=daoMat.selectById(1);
-		transf.setSortileges(s3);*/
-		
 		Sort s4=new Sort("Wingardium Leviosa", daoMat.selectById(2),TypeSort.deplacement);
-		//ench.setSortileges(s4);*/
-		
-		//System.out.println(s1);
-		//System.out.println(daoMat.selectById(5));
-
 		
 		
 		daoS.insert(s1);
@@ -51,13 +124,6 @@ public class Test {
 		daoS.insert(s3);
 		daoS.insert(s4);
 		
-		/*daoMat.update(transf);
-		daoMat.update(ench);
-		daoMat.update(dcfm);*/
-		/*for (Matiere m: daoMat.selectAllWithSort()){
-			System.out.println(m);
-		}*/
-
 	}
 
 	public static void testProfPrincipal() {

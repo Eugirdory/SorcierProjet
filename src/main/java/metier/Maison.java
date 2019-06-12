@@ -69,7 +69,7 @@ public class Maison {
 
 	//to String
 	public String toString() {
-		return "Maison [nom=" + nom + ", score=" + score + ", eleves=" + eleves + "]";
+		return "nom=" + nom + ", score=" + score ;
 	}
 
 }

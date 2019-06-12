@@ -21,7 +21,7 @@ public class DaoMaison implements DAO<Maison, String> {
 		em.getTransaction().commit();// fin de la transaction
 
 		em.close();
-		Context.destroy();
+
 
 	}
 
@@ -30,9 +30,10 @@ public class DaoMaison implements DAO<Maison, String> {
 		EntityManager em = emf.createEntityManager();
 		Maison m = em.find(Maison.class, id);
 		em.close();
-		Context.destroy();
+
 		return m;
 	}
+	
 
 	@Override
 	public void update(Maison object) {
@@ -47,7 +48,7 @@ public class DaoMaison implements DAO<Maison, String> {
 		em.getTransaction().commit();// fin de la transaction
 
 		em.close();
-		Context.destroy();
+
 
 	}
 
@@ -64,7 +65,7 @@ public class DaoMaison implements DAO<Maison, String> {
 		em.getTransaction().commit();// fin de la transaction
 
 		em.close();
-		Context.destroy();
+
 
 	}
 
@@ -77,7 +78,7 @@ public class DaoMaison implements DAO<Maison, String> {
 
 		List<Maison> list = query.getResultList();
 		em.close();
-		Context.destroy();
+
 		return list;
 	}
 	public List<Maison> selectAllWithEleves() {
@@ -88,7 +89,7 @@ public class DaoMaison implements DAO<Maison, String> {
 		Query query=em.createNamedQuery("Maison.findWithEleves",Maison.class);
 		List<Maison> list = query.getResultList();
 		em.close();
-		Context.destroy();
+
 		return list;
 	}
 }

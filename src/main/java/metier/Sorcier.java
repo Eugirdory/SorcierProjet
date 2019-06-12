@@ -8,7 +8,7 @@ import javax.persistence.*;
 // @NamedQuery(name = "Sorcier.findWithMatiere", query = "select s from Sorcier
 // s left join fetch s.matiere"),
 // @NamedQuery(name = "Sorcier.findWithSort", query = "select s from Sorcier s
-// left join fetch s.sort")
+// left join fetch s.sortileges")
 // })
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "SORCIER_TYPE")

@@ -19,7 +19,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		em.persist(object);
 		em.getTransaction().commit();
 		em.close();
-		Context.destroy();
+
 	}
 
 	public Matiere selectById(Integer id) {
@@ -29,7 +29,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		Matiere m = em.find(Matiere.class, id);
 		
 		em.close();
-		Context.destroy();
+
 		return m;
 	}
 
@@ -44,7 +44,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		em.getTransaction().commit();
 		
 		em.close();
-		Context.destroy();
+
 	}
 
 
@@ -56,7 +56,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		em.getTransaction().commit();
 		
 		em.close();
-		Context.destroy();
+
 	}
 
 
@@ -68,7 +68,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		List<Matiere> liste = query.getResultList();
 		
 		em.close();
-		Context.destroy();
+
 		return liste;
 	}
 	
@@ -80,7 +80,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		List<Matiere> list = query.getResultList();
 		
 		em.close();
-		Context.destroy();
+
 		return list;
 	}
 

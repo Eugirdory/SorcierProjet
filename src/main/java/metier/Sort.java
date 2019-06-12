@@ -3,6 +3,9 @@ package metier;
 import javax.persistence.*;
 
 @Entity
+@NamedQueries({
+	//@NamedQuery(name = "Sort.findWithMatiere", query = "select s from Sort s left join fetch s.matiere")
+	})
 public class Sort 
 {
 	@Id
@@ -46,6 +49,12 @@ public class Sort
 
 	public void setTypesort(TypeSort typesort) {
 		this.typesort = typesort;
+	}
+
+	@Override
+	public String toString() {
+		return "Sort [sortId=" + sortId + ", libelle=" + libelle + ", matiere=" + matiere + ", typesort=" + typesort
+				+ "]";
 	}
 
 	@Override

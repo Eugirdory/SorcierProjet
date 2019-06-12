@@ -4,58 +4,69 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
-public class Matiere 
-{
+@NamedQueries({
+	//@NamedQuery(name = "Matiere.findWithSort", query = "select m from Matiere m left join fetch m.sort")
+	})
+public class Matiere {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer matiereId;
-	
+
 	private String nom;
-	
-	@OneToOne(mappedBy = "prof")
+
+	@OneToOne(mappedBy = "matiere")
 	private Professeur professeur;
-	
-	
-	@OneToMany(mappedBy = "sorts")
+
+	@OneToMany(mappedBy = "matiere")
 	private List<Sort> sortileges = new ArrayList();
-	
-	public Matiere(){}
-	
+
+	public Matiere() {
+	}
+
 	public Matiere(String nom, Professeur professeur, List<Sort> sortileges) {
 		this.nom = nom;
-		//this.professeur = professeur;
+		// this.professeur = professeur;
 		this.sortileges = sortileges;
 	}
-	
+
 	public Integer getMatiereId() {
 		return matiereId;
 	}
+
 	public void setMatiereId(Integer matiereId) {
 		this.matiereId = matiereId;
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	
+
 	public Professeur getProfesseur() {
 		return professeur;
 	}
+
 	public void setProfesseur(Professeur professeur) {
 		this.professeur = professeur;
 	}
-	
+
 	public List<Sort> getSortileges() {
 		return sortileges;
 	}
-	public void setSortileges(List<Sort> sortileges) {
-		this.sortileges = sortileges;
+
+	public void setSortileges(Sort sortilege) {
+		this.sortileges.add(sortilege);
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Matiere [matiereId=" + matiereId + ", nom=" + nom + ", professeur=" + professeur + ", sortileges="
+				+ sortileges + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -63,6 +74,7 @@ public class Matiere
 		result = prime * result + ((matiereId == null) ? 0 : matiereId.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -79,5 +91,5 @@ public class Matiere
 			return false;
 		return true;
 	}
-	
+
 }

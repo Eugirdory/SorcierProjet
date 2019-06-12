@@ -10,9 +10,7 @@ import metier.*;
 public class DAOMatiere implements DAO<Matiere,Integer>
 {
 
-	@Override
 	public void insert(Matiere object) {
-		// TODO Auto-generated method stub
 		EntityManagerFactory emf = Context.getInstance().getEmf();
 		EntityManager em = emf.createEntityManager();
 		
@@ -24,9 +22,7 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		Context.destroy();
 	}
 
-	@Override
 	public Matiere selectById(Integer id) {
-		// TODO Auto-generated method stub
 		EntityManagerFactory emf = Context.getInstance().getEmf();
 		EntityManager em = emf.createEntityManager();
 		
@@ -37,9 +33,8 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		return m;
 	}
 
-	@Override
+
 	public void update(Matiere object) {
-		// TODO Auto-generated method stub
 		EntityManagerFactory emf = Context.getInstance().getEmf();
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
@@ -52,9 +47,8 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		Context.destroy();
 	}
 
-	@Override
+
 	public void delete(Matiere object) {
-		// TODO Auto-generated method stub
 		EntityManagerFactory emf = Context.getInstance().getEmf();
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
@@ -65,9 +59,8 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		Context.destroy();
 	}
 
-	@Override
+
 	public List<Matiere> selectAll() {
-		// TODO Auto-generated method stub
 		EntityManagerFactory emf = Context.getInstance().getEmf();
 		EntityManager em = emf.createEntityManager();
 		
@@ -77,6 +70,18 @@ public class DAOMatiere implements DAO<Matiere,Integer>
 		em.close();
 		Context.destroy();
 		return liste;
+	}
+	
+	public List<Matiere> selectAllWithSort() {
+		EntityManagerFactory emf = Context.getInstance().getEmf();
+		EntityManager em = emf.createEntityManager();
+		
+		Query query=em.createNamedQuery("Matiere.findWithSort",Matiere.class);
+		List<Matiere> list = query.getResultList();
+		
+		em.close();
+		Context.destroy();
+		return list;
 	}
 
 }

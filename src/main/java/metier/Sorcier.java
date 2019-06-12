@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "SORCIER_TYPE")
 @Table(name = "Sorciers")
-public  class Sorcier {
+public class Sorcier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -23,7 +23,9 @@ public  class Sorcier {
 	private String nom;
 	private String prenom;
 	private Integer age;
+	@Enumerated(EnumType.STRING)
 	private Civilite civilite;
+	@Enumerated(EnumType.STRING)
 	private Patronus patronus;
 
 	public Sorcier() {
@@ -79,8 +81,8 @@ public  class Sorcier {
 
 	@Override
 	public String toString() {
-		return super.getClass().getSimpleName() + " [id=" + id + ", version=" + version + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age
-				+ ", civilite=" + civilite + ", patronus=" + patronus + "]";
+		return super.getClass().getSimpleName() + " [id=" + id + ", version=" + version + ", nom=" + nom + ", prenom="
+				+ prenom + ", age=" + age + ", civilite=" + civilite + ", patronus=" + patronus + "]";
 	}
 
 }

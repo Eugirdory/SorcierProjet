@@ -5,7 +5,7 @@ import java.util.*;
 import javax.persistence.*;
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Maison.findWithEleves", query = "select m from Maison m left join fetch s.eleve")
+	//@NamedQuery(name = "Maison.findWithEleves", query = "select m from Maison m left join fetch m.sorcier")
 	})
 public class Maison {
 	// attributs
@@ -14,7 +14,7 @@ public class Maison {
 	private String nom;
 	private Integer score;
 	@Column(name="prof_principal")
-	private Professeur professeur;
+	private String nomProfesseur;
 	@OneToMany(mappedBy="maison")
 	private List<Eleve> eleves = new ArrayList<Eleve>();
 	@Version
@@ -37,12 +37,12 @@ public class Maison {
 		this.score = score;
 	}
 
-	public Professeur getProfesseur() {
-		return professeur;
+	public String getNomProfesseur() {
+		return nomProfesseur;
 	}
 
-	public void setProfesseur(Professeur professeur) {
-		this.professeur = professeur;
+	public void setNomProfesseur(String nomProfesseur) {
+		this.nomProfesseur = nomProfesseur;
 	}
 
 	public List<Eleve> getEleves() {

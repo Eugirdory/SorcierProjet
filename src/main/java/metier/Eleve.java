@@ -48,7 +48,6 @@ public class Eleve extends Sorcier {
 	}
 //to String
 	public String toString() {
-		
 		return super.toString()+" [matieres=" + matieres + ", maison=" + maison + "]";
 	}
 	

@@ -5,13 +5,13 @@
 	<persistence-unit name="maBase" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/sorciers" />
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/sorcier" />
 			<property name="hibernate.connection.driver" value="com.postgresql.Driver" />
 			<property name="hibernate.connection.user" value="postgres" />
 			<property name="hibernate.connection.password" value="root" />
 
 			<!-- Valeurs possibles : create, update, validate -->
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 
 			<!-- Permet d'afficher les actiosn dans la console -->

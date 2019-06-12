@@ -63,8 +63,7 @@ public class Matiere {
 
 	@Override
 	public String toString() {
-		return "Matiere [matiereId=" + matiereId + ", nom=" + nom + ", professeur=" + professeur + ", sortileges="
-				+ sortileges + "]";
+		return "Matiere [matiereId=" + matiereId + ", nom=" + nom + ", professeur=" + professeur + "]";
 	}
 
 	@Override
